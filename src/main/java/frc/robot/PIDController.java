@@ -46,8 +46,10 @@ public class PIDController {
     }
 
     public void setTarget(double newTarget) {
-        this.m_target = newTarget;
-        this.first_run = true;
+        if (newTarget != this.m_target) {
+            this.m_target = newTarget;
+            this.first_run = true;
+        }
     }
 
     public void setMinMax(double min_out, double max_out) {
